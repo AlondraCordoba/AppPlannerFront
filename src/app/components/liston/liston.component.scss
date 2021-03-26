@@ -1,0 +1,44 @@
+.cintillo {
+    margin: 20px 0;
+    padding: 10px;
+    position: relative;
+    p {
+        margin: 0;
+        font-size: 15px;
+        color: #fff;
+    }
+    &.azul {
+        background: linear-gradient(to right, #90bac9 1%, #00436c 75%);
+        &::after {
+            background-color: #00436c;
+        }
+    }
+    &.aqua {
+        background: linear-gradient(to right, #83DA9F 1%, #00979B 75%);
+        &::after {
+            background-color: #00979B;
+        }
+    }
+    &.naranja {
+        background: linear-gradient(to right, #FF8900 1%, #FF5200 75%);
+        &::after {
+            background-color: #FF5200;
+        }
+    }
+    &.lava {
+        background: linear-gradient(to right, #FF5200 1%, #F41938 75%);
+        &::after {
+            background-color: #F41938;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+}

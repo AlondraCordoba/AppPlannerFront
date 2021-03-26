@@ -1,0 +1,60 @@
+<ion-content class="bg">
+    <div class="body">
+        <p class="ion-text-center">
+            <ion-icon name="time-outline" style="margin-top: 30px; font-size: 65px; color:rgba(243, 242, 235, 0.89)"></ion-icon>
+        </p>
+        <p style="font-size: 18px; font-weight: bold; color: white;" class="ion-text-center">¡Bienvenido!</p>
+
+        <div class="form">
+            <div class="contenedor">
+                <p style="font-size: 12px; color: white;" class="ion-text-center">Por favor ingrese su información personal</p>
+
+                <form class="ion-padding" autocomplete="off" (ngSubmit)="signUp(forma)" #forma="ngForm">
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="text" name="username" placeholder="Username" style="color: white;" required [(ngModel)]="usuario.username" #username="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="text" name="firstName" placeholder="Nombre" style="color: white;" required [(ngModel)]="usuario.firstName" #firstName="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="text" name="lastName" placeholder="Apellidos" style="color: white;" required [(ngModel)]="usuario.lastName" #lastName="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="email" name="email" placeholder="Email" style="color: white;" required [(ngModel)]="usuario.email" #email="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="password" name="password" placeholder="Password" style="color: white;" required [(ngModel)]="usuario.password" #password="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input class="input" type="number" name="phoneNumber" placeholder="Numero de Telefono" style="color: white;" required [(ngModel)]="usuario.phoneNumber" #phoneNumber="ngModel"></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-select name="gender" required style="color: white; font-size: 12px;" [(ngModel)]="usuario.gender" #gender="ngModel" placeholder="Seleccione su Género">
+                            <ion-select-option value="Femenino">Femenino</ion-select-option>
+                            <ion-select-option value="Masculino">Masculino</ion-select-option>
+                        </ion-select>
+
+                    </div>
+
+
+                    <div class="container-form-btn">
+                        <button type="submit" class="form-btn custon-font"> SIGN UP </button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="footer container-form-btn2">
+                <button (click)="logIn()" class="form-btn2 custon-font" style="margin-bottom:2%"> LOGIN </button>
+            </div>
+
+        </div>
+    </div>
+</ion-content>

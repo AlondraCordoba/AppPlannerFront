@@ -1,17 +1,68 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title style="color:rgb(247, 244, 240); margin-top: 1%;">
+            Planificador
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <h5 style="margin-left: 5%; font-weight: 300;">Hoy 14 de marzo del 2021</h5>
+
+    <ion-card class="card1">
+        <h4 style="text-align: center;">Hacer mis tareas</h4>
+        <ion-card-content style="padding-top: 0%;">
+            <div style="display: flex;">
+                <div style="text-align: left; width: 50%;">
+                    <p>
+                        <ion-icon name="time-outline"></ion-icon> 01 PM - 02 PM</p>
+                    <p>
+                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Loreto Zac. México</p>
+                </div>
+                <div style="text-align: right; width: 50%;">
+                    <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
+                    <p>¡Pronto!</p>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card2">
+        <h4 style="text-align: center;">Estudiar Inglés</h4>
+        <ion-card-content style="padding-top: 0%;">
+            <div style="display: flex;">
+                <div style="text-align: left; width: 50%;">
+                    <p>
+                        <ion-icon name="time-outline"></ion-icon> 10 AM - 01 PM</p>
+                    <p>
+                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Aguascalientes, San Cayetano</p>
+                </div>
+                <div style="text-align: right; width: 50%;">
+                    <!-- <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
+          <p>¡Pronto!</p> -->
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card3">
+        <h4 style="text-align: center;">Cumple de mamá</h4>
+        <ion-card-content style="padding-top: 0%;">
+            <div style="display: flex;">
+                <div style="text-align: left; width: 50%;">
+                    <p>
+                        <ion-icon name="time-outline"></ion-icon> 11 AM - 08 PM</p>
+                    <p>
+                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Miguel Auza #206</p>
+                </div>
+                <div style="text-align: right; width: 50%;">
+                    <!-- <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
+          <p>¡Pronto!</p> -->
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+
 </ion-content>

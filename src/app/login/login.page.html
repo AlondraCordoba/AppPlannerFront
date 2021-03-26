@@ -1,0 +1,45 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      LOGIN
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="bg">
+    <div class="body">
+        <p class="ion-text-center">
+            <ion-icon name="time-outline" style="margin-top: 30px; font-size: 65px; color:rgba(243, 242, 235, 0.89)"></ion-icon>
+        </p>
+        <p style="font-size: 18px; font-weight: bold; color: white;" class="ion-text-center">¡Bienvenido!</p>
+        <div class="form">
+            <div class="contenedor">
+                <p style="font-size: 12px; color: white;" class="ion-text-center">Por favor ingrese su información personal</p>
+
+                <form class="ion-padding" autocomplete="off">
+
+                    <div class="wrap-input">
+                        <ion-input [(ngModel)]="usuario.username" #username="ngModel" class="input" type="text" name="user-name" placeholder="Username" style="color: white;" required></ion-input>
+                    </div>
+
+                    <div class="wrap-input">
+                        <ion-input [(ngModel)]="usuario.password" #password="ngModel" class="input" type="password" name="password" placeholder="Password" style="color: white;" required></ion-input>
+                    </div>
+
+                    <div style="padding-bottom: 15px; font-size: 12px; color: rgba(230, 230, 230, 0.788);">
+                        <input type="checkbox" value="t" style="margin-left: 10px;"> Contraseña
+                        <small><a href="" style="margin-left: 10px; color: white; text-transform: none; text-decoration: none;">¿Olvidaste tu contraseña?</a></small>
+                    </div>
+
+                    <div class="container-form-btn">
+                        <button (click)="loginUsuario()" class="form-btn custon-font"> LOGIN </button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="footer container-form-btn2">
+                <button (click)="signUp()" class="form-btn2 custon-font" style="margin-bottom:2%"> SIGN UP </button>
+            </div>
+        </div>
+    </div>
+</ion-content>

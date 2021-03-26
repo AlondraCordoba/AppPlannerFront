@@ -1,0 +1,24 @@
+ion-toolbar {
+    //--background: rgb(77, 46, 134);
+    --background: linear-gradient(to right, #83DA9F 1%, #00979B 75%);
+    &::after {
+        --background-color: #00979B;
+    }
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: rgba(255, 255, 255, 0.836);
+    height: 70px;
+}
+
+ion-toolbar {
+    ion-title {
+        text-align: left;
+        padding-left: 5%;
+        font-family: 'Roboto';
+        margin-top: 1%;
+    }
+}
+
+ion-buttons {
+    margin-top: 1%;
+}

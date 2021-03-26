@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
+ion-content {
+    --background: rgba(61, 17, 90, 0.932);
+}
+
+// BACKGROUND
+.particle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+@for $i from 1 through 30 {
+    @keyframes particle-animation-#{$i} {
+        100% {
+            transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+        }
+    }
+    .particle:nth-child(#{$i}) {
+        animation: particle-animation-#{$i} 60s infinite;
+        $size: random(5) + 5 + px;
+        opacity: random(100)/100;
+        height: $size;
+        width: $size;
+        animation-delay: -$i * .2s;
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+        background: hsl(random(360), 70%, 50%);
+    }
+}
+
+// CONTENT, BUTTON
+.contenedor {
+    padding: 25px;
+    padding-left: 30px;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 30px;
+    background-color: rgb(89, 216, 215);
+    border-radius: 20px;
+    font-size: 12px;
+    color: black;
+    text-transform: uppercase;
+    outline: none;
+    transition: all 0.4s;
+    box-shadow: 0 10px 30px 0px rgba(68, 68, 68, 0.186);
+}
+
+.form-btn:hover {
+    background: rgb(60, 145, 145);
+    box-shadow: 0 10px 30px 0px rgb(29, 28, 28);
+}
+
+//CLOCK
+.clock {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 10px solid #cfc42b;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    background: #fefbf2;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0px 0px 10px black;
+}
+
+.clock::before {
+    position: absolute;
+    content: '';
+    height: 65px;
+    width: 5px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 6s linear infinite;
+    transform-origin: top;
+}
+
+.clock::after {
+    position: absolute;
+    content: '';
+    height: 50px;
+    width: 5px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 72s linear infinite;
+    transform-origin: top;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dace26;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: black;
+    left: 50%;
+    top: calc(50% - 145px);
+    z-index: 2;
+    transform: translateX(-50%);
+    box-shadow: 140px 145px 0 0 black, -140px 145px 0 0 black, 0 280px 0 0 black;
+}

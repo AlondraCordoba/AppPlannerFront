@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@500&display=swap');
+ion-card {
+    width: 350px;
+}
+
+.card1 {
+    // border-left: 8px solid rgb(77, 46, 134);
+    border-left: 8px solid rgba(61, 17, 90, 0.932);
+}
+
+.card2 {
+    border-left: 8px solid rgb(255, 204, 0);
+}
+
+.card3 {
+    border-left: 8px solid rgb(172, 69, 172);
+}
+
+ion-toolbar {
+    //--background: rgb(77, 46, 134);
+    --background: rgba(61, 17, 90, 0.932);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 70px;
+}
+
+ion-toolbar {
+    ion-title {
+        text-align: left;
+        padding-left: 5%;
+        font-family: 'Roboto';
+    }
+}

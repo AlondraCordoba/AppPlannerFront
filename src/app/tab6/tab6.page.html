@@ -1,0 +1,13 @@
+<ion-header [translucent]="true" style="margin-bottom: 10%;">
+    <ion-toolbar>
+        <ion-title style="color:rgb(247, 244, 240); margin-top: 1%;">
+            Administracion
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <app-liston [mensaje]="' Registrar Usuarios '" [clase]="'azul'" [ancho]="'50%'" (click)="irRegistU()"></app-liston>
+    <app-liston [mensaje]="' Lista de Usuarios '" [clase]="'aqua'" [ancho]="'70%'" (click)="irListU()"></app-liston>
+    <app-liston [mensaje]="' Administrar Usuarios '" [clase]="'lava'" [ancho]="'60%'" (click)="irAdminU()"></app-liston>
+</ion-content>
