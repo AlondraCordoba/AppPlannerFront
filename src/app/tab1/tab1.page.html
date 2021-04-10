@@ -1,64 +1,41 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title style="color:rgb(247, 244, 240); margin-top: 1%;">
-            Planificador
+            Tareas
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-    <h5 style="margin-left: 5%; font-weight: 300;">Hoy 14 de marzo del 2021</h5>
 
-    <ion-card class="card1">
-        <h4 style="text-align: center;">Hacer mis tareas</h4>
+    <form class="ion-padding" autocomplete="off" (ngSubmit)="addToDoL(forma)" #forma="ngForm">
+
+        <ion-item>
+            <ion-label position="floating" style="font-size: 14px; color: rgb(68, 65, 65);"> Tarea a agregar </ion-label>
+            <ion-input class="input" type="text" name="username" required [(ngModel)]="toDoList.description" #description="ngModel"></ion-input>
+        </ion-item>
+
+        <div class="container-form-btn">
+            <ion-button type="submit" class="form-btn custon-font" color="warning"> Agregar </ion-button>
+        </div>
+
+    </form>
+    <br><br>
+    <!--<h4 style="text-align: center;">Lista de Tareas</h4>-->
+
+    <ion-card class="card2" *ngFor="let tasks of dataTasks; let i = index">
+        <h4 style="text-align: center;">{{dataTasks[i].description}} </h4>
         <ion-card-content style="padding-top: 0%;">
             <div style="display: flex;">
                 <div style="text-align: left; width: 50%;">
                     <p>
-                        <ion-icon name="time-outline"></ion-icon> 01 PM - 02 PM</p>
-                    <p>
-                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Loreto Zac. México</p>
+                        <ion-icon style="color: rgb(163, 162, 162);" name="location-outline"></ion-icon> Aguascalientes</p>
                 </div>
                 <div style="text-align: right; width: 50%;">
-                    <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
-                    <p>¡Pronto!</p>
-                </div>
-            </div>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card class="card2">
-        <h4 style="text-align: center;">Estudiar Inglés</h4>
-        <ion-card-content style="padding-top: 0%;">
-            <div style="display: flex;">
-                <div style="text-align: left; width: 50%;">
-                    <p>
-                        <ion-icon name="time-outline"></ion-icon> 10 AM - 01 PM</p>
-                    <p>
-                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Aguascalientes, San Cayetano</p>
-                </div>
-                <div style="text-align: right; width: 50%;">
-                    <!-- <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
-          <p>¡Pronto!</p> -->
-                </div>
-            </div>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card class="card3">
-        <h4 style="text-align: center;">Cumple de mamá</h4>
-        <ion-card-content style="padding-top: 0%;">
-            <div style="display: flex;">
-                <div style="text-align: left; width: 50%;">
-                    <p>
-                        <ion-icon name="time-outline"></ion-icon> 11 AM - 08 PM</p>
-                    <p>
-                        <ion-icon style="color: rgb(192, 38, 38);" name="location-outline"></ion-icon> Miguel Auza #206</p>
-                </div>
-                <div style="text-align: right; width: 50%;">
-                    <!-- <ion-icon style="color: rgb(141, 8, 8);" name="notifications"></ion-icon>
-          <p>¡Pronto!</p> -->
+                    <ion-button color="danger" style="float: right; margin-right: 1%;" (click)="delete(i)">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </ion-button>
                 </div>
             </div>
         </ion-card-content>

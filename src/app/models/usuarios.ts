@@ -10,4 +10,5 @@ export class UsuarioModel {
     role: string; 
     status: boolean;
     eventsCalendar: [];
+    toDoList: [];
 }

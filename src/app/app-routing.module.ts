@@ -54,6 +54,14 @@ const routes: Routes = [
   {
     path: 'list-users',
     loadChildren: () => import('./list-users/list-users.module').then( m => m.ListUsersPageModule)
+  },
+  {
+    path: 'modal-delete',
+    loadChildren: () => import('./modals/modal-delete/modal-delete.module').then( m => m.ModalDeletePageModule)
+  },
+  {
+    path: 'modal-update',
+    loadChildren: () => import('./modals/modal-update/modal-update.module').then( m => m.ModalUpdatePageModule)
   }
 ];
 @NgModule({

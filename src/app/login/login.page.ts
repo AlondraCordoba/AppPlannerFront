@@ -10,7 +10,7 @@ const Toast = Swal.mixin({
   toast: true,
   position: 'center',
   showConfirmButton: false,
-  timer: 3000,
+  timer: 1500,
 })
 
 @Component({
@@ -47,29 +47,17 @@ export class LoginPage implements OnInit {
   loginUsuario(){
       this.appService.loginUsuario(this.usuario).then((resp: any) => {
         if(resp.usuario.role == "ADMIN_ROLE"){
-          
-          let navExtras: NavigationExtras = {
-            queryParams:{
-              usuario: resp.usuario
-            }
-         }  
-         
-        this.router.navigate(['/home-admin'], navExtras);  
-       // localStorage.setItem('infoAdmin', JSON.stringify(resp.usuario));
+
+        this.router.navigate(['/home-admin']);  
+        localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
         //console.log(this.usuario);
         console.log(resp);
          Toast.fire(resp.msg, '', 'success');
 
          }else if (resp.usuario.role == "USER_ROLE"){
 
-          let navExtras: NavigationExtras = {
-            queryParams:{
-              usuario: resp.usuario
-            }
-         }  
-
-         this.router.navigate(['/home-user'], navExtras);
-         //localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
+         this.router.navigate(['/home-user']);
+         localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
          //console.log(this.usuario);
          console.log(resp);
          Toast.fire(resp.msg, '', 'success');

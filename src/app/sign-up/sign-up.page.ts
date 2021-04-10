@@ -10,7 +10,7 @@ const Toast = Swal.mixin({
   toast: true,
   position: 'center',
   showConfirmButton: false,
-  timer: 3000,
+  timer: 2000,
 })
 
 @Component({

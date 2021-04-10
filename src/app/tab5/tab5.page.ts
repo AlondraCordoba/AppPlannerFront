@@ -14,8 +14,8 @@ export class Tab5Page implements OnInit {
   ngOnInit() {
   }
   logOut(){
-      /*localStorage.removeItem('infoAdmin');
-      localStorage.removeItem('infoUser');*/
+      //localStorage.removeItem('infoAdmin');
+      localStorage.removeItem('infoUser');
       //localStorage.clear();
       //     this.router.navigate(['/login']);
       this.router.navigate(['/']);

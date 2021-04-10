@@ -9,5 +9,17 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-card *ngFor="let userC of users; let i=index">
+        <ion-card-header>
+            <!--<th scope="row">{{i+1}}</th>-->
+            <ion-card-subtitle>{{userC.email}}</ion-card-subtitle>
+            <ion-card-title>{{userC.username}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{userC.firstName}} {{userC.lastName}}
+            <ion-button color="danger" style="float: right; margin-right: 1%;" (click)="eliminarLibro(userC._id)">
+                <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

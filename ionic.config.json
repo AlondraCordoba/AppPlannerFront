@@ -1,5 +1,7 @@
 {
   "name": "appPlanner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
