@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../services/appService/app.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-tab5',
@@ -9,17 +9,21 @@ import { Router } from '@angular/router';
 })
 export class Tab5Page implements OnInit {
 
-  constructor(public router: Router, public appService: AppService) { }
+  users:any;
+
+  constructor(public router: Router, public appService: AppService, public activatedRoute: ActivatedRoute) { 
+    this.users = window.localStorage.getItem('infoUser')
+    this.users = JSON.parse(this.users);
+  }
 
   ngOnInit() {
-  }
+  } 
   logOut(){
       //localStorage.removeItem('infoAdmin');
-      localStorage.removeItem('infoUser');
+      window.localStorage.removeItem('infoUser');
       //localStorage.clear();
       //     this.router.navigate(['/login']);
       this.router.navigate(['/']);
-    
   }
 
 }

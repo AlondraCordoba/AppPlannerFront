@@ -10,15 +10,19 @@
     <div class="card-container body">
         <img class="round" src='../../assets/img/iconoUser.png' alt="user" />
         <h6></h6>
-        <p> <br/> </p>
+        <p> <br> </p>
         <div class="buttons">
+            <p>Username: <b>{{users.username}}</b></p>
+            <p>Email: <b>{{users.email}}</b></p>
+            <p>Telefono: <b>{{users.phoneNumber}}</b></p>
+            <p>Rol: <b>{{users.role}}</b></p>
             <!-- <button class="primary">
                 Editar
             </button>
             <button class="primary ghost">
                 Eliminar cuenta
             </button>-->
-            <br> <br><br><br><br>
+            <br> <br>
             <button class="primary ghost2" (click)="logOut()" style="margin-top: 2%">
                 Cerrar sesion
             </button>

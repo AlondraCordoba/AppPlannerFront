@@ -51,11 +51,11 @@ export class AppService {
 // http://localhost:3000/toDoList/?idUsuario=603e51f51a35a066388f0f28&idToDoList=603e5d996dcc7c2108734283
 
   eliminarToDoList(idU: string, idT: string){
-    return this.http.delete(`${this.url}/usuario/?idUsuario=${idU}&idToDoList=${idT}`).toPromise();
+    return this.http.delete(`${this.url}/toDoList/?idUsuario=${idU}&idToDoList=${idT}`).toPromise();
   }
 
   actualizarToDoList(toDL: ToDoListModel, idU: string, idT: string){
-    return this.http.put(`${this.url}/usuario/?idUsuario=${idU}&idToDoList=${idT}`, toDL).toPromise();
+    return this.http.put(`${this.url}/toDoList/?idUsuario=${idU}&idToDoList=${idT}`, toDL).toPromise();
   }
 
    // LOGIN

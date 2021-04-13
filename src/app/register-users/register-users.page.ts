@@ -35,6 +35,7 @@ export class RegisterUsersPage implements OnInit {
       this.appService.registrarUsuario(this.usuario).then((resp: any) => {
         Toast.fire(resp.msg, '', 'success');
         this.salida.emit();
+        window.location.reload();
       }).catch((error) => {
         console.log(error);
         Toast.fire(error.error.msg, '', 'error');

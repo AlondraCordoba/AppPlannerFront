@@ -47,17 +47,18 @@ export class LoginPage implements OnInit {
   loginUsuario(){
       this.appService.loginUsuario(this.usuario).then((resp: any) => {
         if(resp.usuario.role == "ADMIN_ROLE"){
-
         this.router.navigate(['/home-admin']);  
-        localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
+        
+        window.localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
         //console.log(this.usuario);
         console.log(resp);
          Toast.fire(resp.msg, '', 'success');
 
          }else if (resp.usuario.role == "USER_ROLE"){
-
+         
          this.router.navigate(['/home-user']);
-         localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
+
+         window.localStorage.setItem('infoUser', JSON.stringify(resp.usuario));
          //console.log(this.usuario);
          console.log(resp);
          Toast.fire(resp.msg, '', 'success');
