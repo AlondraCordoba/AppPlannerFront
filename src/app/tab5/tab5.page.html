@@ -9,10 +9,11 @@
 <ion-content>
     <div class="card-container body">
         <!--<img class="round" src='../../assets/img/iconoUser.png' alt="user" />-->
-        <img class="round" [src]='image' alt="user" *ngIf="image" />
         <h6></h6>
         <p> <br> </p>
         <div class="buttons">
+            <img class="round" [src]='image' alt="user" *ngIf="image" />
+
             <button class="primary" (click)="fotoCamera()">
                 Foto Camara
             </button>
