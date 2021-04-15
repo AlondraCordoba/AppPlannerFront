@@ -9,13 +9,18 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-//import { Calendar } from '@ionic-native/calendar/ngx';
+
+import { Tab4Page } from './tab4/tab4.page';
+import { Tab3Page } from './tab3/tab3.page';
+
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [Camera, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy} ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

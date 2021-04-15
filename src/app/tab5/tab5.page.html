@@ -8,20 +8,22 @@
 
 <ion-content>
     <div class="card-container body">
-        <img class="round" src='../../assets/img/iconoUser.png' alt="user" />
+        <!--<img class="round" src='../../assets/img/iconoUser.png' alt="user" />-->
+        <img class="round" [src]='image' alt="user" *ngIf="image" />
         <h6></h6>
         <p> <br> </p>
         <div class="buttons">
+            <button class="primary" (click)="fotoCamera()">
+                Foto Camara
+            </button>
+            <button class="primary ghost" (click)="fotoGaleria()"> 
+                Foto Galeria
+            </button>
+
             <p>Username: <b>{{users.username}}</b></p>
             <p>Email: <b>{{users.email}}</b></p>
             <p>Telefono: <b>{{users.phoneNumber}}</b></p>
             <p>Rol: <b>{{users.role}}</b></p>
-            <!-- <button class="primary">
-                Editar
-            </button>
-            <button class="primary ghost">
-                Eliminar cuenta
-            </button>-->
             <br> <br>
             <button class="primary ghost2" (click)="logOut()" style="margin-top: 2%">
                 Cerrar sesion

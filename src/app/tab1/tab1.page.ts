@@ -6,12 +6,13 @@ import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AppService } from '../services/appService/app.service';
 import { UsuarioModel } from '../models/usuarios';
+import { IndexOutOfBoundException } from '@angular-devkit/schematics/src/utility/update-buffer';
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'top-right',
+  position: 'center',
   showConfirmButton: false,
-  timer: 3000,
+  timer: 1000,
 })
 
 
@@ -23,9 +24,10 @@ const Toast = Swal.mixin({
 export class Tab1Page {
   toDoListM: ToDoListModel = new ToDoListModel();
   usuario: UsuarioModel = new UsuarioModel();
-  tasksList: any[] = [];
+  tasksList: any[]=[];
     @Output() salida = new EventEmitter();
     idU: any;
+    idT: any;
 
     // public listTasks: any;
     // printContacts: any;
@@ -67,11 +69,47 @@ export class Tab1Page {
     
     this.appService.obtenerUsuario(this.idU).then((resp: any) => {
       this.tasksList=resp.cont.usuario[0].toDoList;
+      //this.tasksList=this.tasksList.indexOf(this.tasksList.toDoList);
       console.log(this.tasksList);
     }).catch((error) => {
       console.log(error);
     });
+    /*this.tasksList = window.localStorage.getItem('infoUser')
+    this.tasksList = JSON.parse(this.tasksList);
+    this.tasksList = this.tasksList.toDoList;
+    console.log(this.tasksList);*/
   }
+
+  async eliminarTasks(idTL: string){
+      this.idU = window.localStorage.getItem('infoUser')
+      this.idU = JSON.parse(this.idU);
+      
+      //this.idT = window.localStorage.getItem('infoUser')
+     // this.idT = JSON.parse(this.idT);
+
+      this.idU = this.idU._id;
+
+      this.idT = idTL;
+      //this.idT = idTL;
+
+      console.log(this.idU);
+      console.log(this.idT);
+
+      // this.router.navigate(['/modal-delete']);
+      // this.appService.eliminarToDoList(this.idU, this.idT).then((resp: any) => {
+      //   this.toDoListM = resp;
+      //   Toast.fire(resp.msg, '', 'success');
+      //   this.salida.emit();
+      //   window.location.reload();
+      // }).catch( (error) => {
+      //   Toast.fire(error.error.msg, '', 'error');
+      //   console.log(error)
+      //   this.salida.emit();
+      // })
+      // console.log(this.toDoListM);
+    
+  }
+
 
   /*async addToDoL(forma:NgForm){
       //localStorage.setItem('infoToDo', JSON.stringify(this.toDoList));

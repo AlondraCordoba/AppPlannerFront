@@ -13,3 +13,12 @@ ion-toolbar {
         font-family: 'Roboto';
     }
 }
+
+:host ::ng-deep {
+    .monthview-container {
+        height: auto !important;
+    }
+    .event-detail-container {
+        display: none;
+    }
+}

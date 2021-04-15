@@ -1,4 +1,7 @@
+import { NavController, NavParams, AlertController } from '@ionic/angular';
 import { Component } from '@angular/core';
+import { Calendar } from '@ionic-native/calendar/ngx';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+ 
+  modalReady = false;
+ 
+  constructor(private modalCtrl: ModalController) { }
 
-}
+
+
+ }

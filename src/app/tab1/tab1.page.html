@@ -25,7 +25,7 @@
     <!--<h4 style="text-align: center;">Lista de Tareas</h4>-->
 
     <ion-card class="card2" *ngFor="let tasks of tasksList; let i = index">
-        <h4 style="text-align: center;">{{tasks[0+1].description}} </h4>
+        <h4 style="text-align: center;">{{tasksList[i].description}} </h4>
         <ion-card-content style="padding-top: 0%;">
             <div style="display: flex;">
                 <div style="text-align: left; width: 50%;">
@@ -33,7 +33,7 @@
                         <ion-icon style="color: rgb(163, 162, 162);" name="location-outline"></ion-icon> Aguascalientes</p>
                 </div>
                 <div style="text-align: right; width: 50%;">
-                    <ion-button color="danger" style="float: right; margin-right: 1%;">
+                    <ion-button color="danger" style="float: right; margin-right: 1%;" (click)="eliminarTasks(tasksList[i]._id)">
                         <ion-icon name="close-outline"></ion-icon>
                     </ion-button>
                 </div>
